@@ -1,2 +1,2 @@
-# Unity-C-Script
+# Unity-Script
 unity C# script collection
