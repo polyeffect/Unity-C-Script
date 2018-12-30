@@ -9,14 +9,12 @@ public class FPSDisplay : MonoBehaviour
     float wfps = 100.0f;
     Text text;
 
-    // Start is called before the first frame update
     void Start()
     {
         text = GetComponent<Text>();
         StartCoroutine("ResetWFPS");
     }
 
-    // Update is called once per frame
     void Update()
     {
         deltaTime += (Time.unscaledDeltaTime - deltaTime) * 0.1f;
@@ -27,7 +25,7 @@ public class FPSDisplay : MonoBehaviour
         float msec = deltaTime * 1000.0f;
         float fps = 1.0f / deltaTime;
         if (fps < wfps) wfps = fps;
-        text.text = string.Format("{0:0.0} ms ({1:0.0} fps / {2:0.0} wfps) ", msec, fps, wfps);
+        text.text = string.Format("{0:0.0} ms ({1:0.0} fps / {2:0.0} wfps)", msec, fps, wfps);
     }
 
     IEnumerator ResetWFPS()
